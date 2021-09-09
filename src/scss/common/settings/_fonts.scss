@@ -1,61 +1,9 @@
-/* 
-    Created on : 20/08/2014, 16:35:47
-    Author     : Davidson Alencar
-*/
-@mixin font-face-roboto($file-name, $weight, $style) {
-  $path-fonts: "../fonts/roboto";
-  @font-face {
-    font-family: "roboto";
-    src: url("#{$path-fonts}/#{$file-name}.eot");
-    src: url("#{$path-fonts}/#{$file-name}.eot?#iefix")
-        format("embedded-opentype"),
-      url("#{$path-fonts}/#{$file-name}.woff") format("woff"),
-      url("#{$path-fonts}/#{$file-name}.ttf") format("truetype"),
-      url("#{$path-fonts}/#{$file-name}.svg#roboto") format("svg");
-    font-weight: $weight;
-    font-style: $style;
-  }
-}
-
-@include font-face-roboto("roboto-thin", 100, normal);
-@include font-face-roboto("roboto-thinitalic", 100, italic);
-@include font-face-roboto("roboto-light", 300, normal);
-@include font-face-roboto("roboto-lightitalic", 300, italic);
-@include font-face-roboto("roboto-regular", 400, normal);
-@include font-face-roboto("roboto-italic", 400, italic);
-@include font-face-roboto("roboto-medium", 500, normal);
-@include font-face-roboto("roboto-mediumitalic", 500, italic);
-@include font-face-roboto("roboto-bold", 700, normal);
-@include font-face-roboto("roboto-bolditalic", 700, italic);
-@include font-face-roboto("roboto-black", 900, normal);
-@include font-face-roboto("roboto-blackitalic", 900, italic);
-
-/* 
-    Created on : 20/08/2014, 17:35:48
-    Author     : Davidson Alencar
-*/
-@mixin font-face-opensans($file-name, $weight, $style) {
-  $path-fonts: "../fonts/open-sans";
-  @font-face {
-    font-family: "open sans";
-    src: url("#{$path-fonts}/#{$file-name}.eot");
-    src: url("#{$path-fonts}/#{$file-name}.eot?#iefix")
-        format("embedded-opentype"),
-      url("#{$path-fonts}/#{$file-name}.woff") format("woff"),
-      url("#{$path-fonts}/#{$file-name}.ttf") format("truetype"),
-      url("#{$path-fonts}/#{$file-name}.svg#open+sans") format("svg");
-    font-weight: $weight;
-    font-style: $style;
-  }
-}
-
-@include font-face-opensans("opensans-light", 300, normal);
-@include font-face-opensans("opensans-lightitalic", 300, italic);
-@include font-face-opensans("opensans-regular", 400, normal);
-@include font-face-opensans("opensans-italic", 400, italic);
-@include font-face-opensans("opensans-semibold", 600, normal);
-@include font-face-opensans("opensans-semibolditalic", 600, italic);
-@include font-face-opensans("opensans-bold", 700, normal);
-@include font-face-opensans("opensans-bolditalic", 700, italic);
-@include font-face-opensans("opensans-extrabold", 800, normal);
-@include font-face-opensans("opensans-extrabolditalic", 800, italic);
+@import "node_modules/@fontsource/roboto/scss/mixins";
+$fontName: "Roboto";
+$fontId: "roboto";
+$style: normal;
+$display: swap;
+$weight: 400;
+$fontDir: "../fonts/#{$fontId}";
+$unicodeMap: (cyrillic-ext: (U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F), cyrillic: (U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116), greek-ext: (U+1F00-1FFF), greek: (U+0370-03FF), vietnamese: (U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB), latin-ext: (U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF), latin: (U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD));
+@include fontFace();
