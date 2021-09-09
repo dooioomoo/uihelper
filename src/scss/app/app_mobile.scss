@@ -1,0 +1,26 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins";
+@import "../common/settings/bootstrap";
+
+@import ".mixins/mixins";
+
+/**
+ * import public style
+ */
+@import "public/reset";
+@import "public/root";
+@import "public/fonts";
+@import "public/wrap";
+@import "public/title";
+@import "public/article";
+@import "public/list";
+@import "public/images";
+@import "public/loader";
+
+/**
+ * import porject style for mobile
+ */
+@import "layout/header_mob.scss";
+@import "layout/footer_mob.scss";
+@import "layout/sidebar_mob.scss";
+@import "pages/pages_mob.scss";

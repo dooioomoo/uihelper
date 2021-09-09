@@ -1,0 +1,26 @@
+body {
+  position: relative;
+  background: rgba($primary, 0.0618);
+}
+
+:focus {
+  outline: none !important;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  @include transition(all 0.35s ease-in-out);
+
+  &:hover {
+    text-decoration: none;
+    @include transition(all 0.35s ease-in-out);
+  }
+}
+
+@each $color,
+$value in $theme-colors {
+  .text-#{$color} .fa {
+    color: $value !important;
+  }
+}

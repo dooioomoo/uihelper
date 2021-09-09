@@ -1,0 +1,25 @@
+/**
+ * import common fiels
+ *
+ */
+@import "node_modules/bootstrap/scss/functions";
+@import "./settings/bootstrap";
+@import "./settings/fontawesome";
+@import "./settings/fonts";
+
+/**
+  * packages
+  */
+
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/shims";
+@import "node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+@import "node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+
+/**
+ * custom scss
+ */
+
+@import "./modules/backtohead.scss";

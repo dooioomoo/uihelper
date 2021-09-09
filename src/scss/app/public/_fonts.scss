@@ -1,0 +1,115 @@
+/* Typography for Arabic Font */
+$Arabic: "ar", "ary", "azb", "fa-IR", "haz", "ps", "ur";
+@include htmlfont($Arabic, true) {
+  font-family: Tahoma, Arial, sans-serif;
+}
+@include headerfont($Arabic, true) {
+  font-weight: 700;
+}
+
+/* Typography for Chinese Font */
+@include htmlfont("zh-", false, "lang^=") {
+  //   font-family: "PingFang SC", "Helvetica Neue", Helvetica, STHeitiSC-Light,
+  //     Arial, sans-serif;
+  font-family: -apple-system, SF UI Text, "Helvetica Neue", Helvetica, Arial,
+    "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+@include headerfont("zh-", false, "lang^=") {
+  font-weight: 700;
+}
+
+/* Typography for Cyrillic Font */
+$Cyrillic: "bg-BG", "ru-RU", "uk";
+@include htmlfont($Cyrillic, true) {
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
+}
+@include headerfont($Cyrillic, true) {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Typography for Devanagari Font */
+$Devanagari: "bn-BD", "hi-IN", "mr-IN";
+@include htmlfont($Devanagari, true) {
+  font-family: Arial, sans-serif;
+}
+@include headerfont($Devanagari, true) {
+  font-weight: 700;
+}
+
+/* Typography for Greek Font */
+$Greek: "el";
+@include htmlfont($Greek) {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@include headerfont($Greek) {
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Typography for Gujarati Font */
+$Gujarati: "gu-IN";
+@include htmlfont($Gujarati) {
+  font-family: Arial, sans-serif;
+}
+@include headerfont($Gujarati) {
+  font-weight: 700;
+}
+
+/* Typography for Hebrew Font */
+$Hebrew: "he-IL";
+@include htmlfont($Hebrew) {
+  font-family: "Arial Hebrew", Arial, sans-serif;
+}
+@include headerfont($Hebrew) {
+  font-weight: 700;
+}
+
+/* Typography for Korean font */
+$Korean: "ko-KR";
+@include htmlfont($Korean) {
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum,
+    sans-serif;
+}
+@include headerfont($Korean) {
+  font-weight: 600;
+}
+
+/* Typography for Thai Font */
+$Thai: "th";
+@include htmlfont($Thai) {
+  line-height: 1.8;
+  font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+@include headerfont($Thai) {
+  line-height: 1.8;
+  font-family: "Sukhumvit Set", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* Typography for Japanese Font */
+$Japanese: "ja";
+@include htmlfont($Japanese) {
+  font-family: "roboto", "Noto Sans JP", "游ゴシック Medium", "游ゴシック体",
+    "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN",
+    "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
+  //font-family: 'Verdana',ヒラギノ角ゴ ProN, Hiragino Kaku Gothic ProN, ヒラギノ角ゴ Pro, Hiragino Kaku Gothic Pro, メイリオ, Meiryo, ＭＳ Ｐゴシック, MS PGothic, sans-serif;
+  //font-family: 'Georgia',"Noto Serif JP","Noto Serif",serif;}
+}
+@include headerfont($Japanese) {
+  font-weight: 700;
+  //font-family: 'Georgia',"Noto Serif JP","Noto Serif",serif;
+}
+/* Remove letter-spacing for all non-latin alphabets */
+$all-area: "ar", "ary", "azb", "fa-IR", "haz", "ps", "ur", "bg-BG", "ru-RU",
+  "uk", "bn-BD", "hi-IN", "mr-IN", "el", "gu-IN", "he-IL", "ko-KR", "th";
+@each $area in $all-area {
+  $code: "lang=";
+  @if $area== "zh-" {
+    $code: "lang^=";
+  }
+  html[#{$code}"#{$area}"] {
+    * {
+      letter-spacing: 0 !important;
+    }
+  }
+}

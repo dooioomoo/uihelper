@@ -1,0 +1,25 @@
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/mixins";
+@import "../common/settings/bootstrap";
+
+@import ".mixins/mixins";
+
+/**
+ * import public style
+ */
+@import "public/reset";
+@import "public/root";
+@import "public/fonts";
+@import "public/wrap";
+@import "public/title";
+@import "public/article";
+@import "public/list";
+@import "public/images";
+@import "public/loader";
+/**
+ * import project style for display
+ */
+@import "layout/header";
+@import "layout/footer";
+@import "layout/sidebar";
+@import "pages/pages";

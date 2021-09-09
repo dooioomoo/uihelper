@@ -1,0 +1,595 @@
+/**
+wordpress template style
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Twenty Seventeen brings your site to life with header video and immersive featured images. With a focus on business sites, it features multiple sections on the front page as well as widgets, navigation and social menus, a logo, and more. Personalize its asymmetrical grid with a custom color scheme and showcase your multimedia content with post formats. Our default theme for 2017 works great in many languages, for any abilities, and on any device.
+Version: 1.9
+License: GNU General Public License v2 or later
+ */
+
+/*--------------------------------------------------------------
+2.0 Accessibility
+--------------------------------------------------------------*/
+
+/* Text meant only for screen readers. */
+/**
+variables
+ */
+
+
+// type
+
+$global-font-size: 1rem;
+
+$line-height: 1.8;
+
+$heading-top: 1rem;
+$heading-bottom: 1rem;
+$heading-bg: $white;
+// primary navigation
+
+$menubg: $gray-200;
+$submenubg: $primary;
+$menufontsize: 15px;
+$menuhoverbg: $primary;
+$menufontcolor: $primary;
+$menufonthovercolor: $white;
+$menufonthoverbgcolor: $primary;
+$menubuttonsize: 50px;
+$menubuttonradius: $btn-border-radius;
+$submenupadding: 5px 15px;
+$submenulinkcolor: $white;
+$submenuhovercolor: $white;
+$submenuhoverbgcolor: rgba($gray-200, .3);
+
+//container
+$content-main-sidebar-padding-top: 50px;
+$content-main-sidebar-gutter: 50px;
+
+//xzoom
+
+$xzoom-border-width: 1px;
+$xzoom-border-defaultcolor: #f7f7f7;
+$xzoom-zoom-border-width: 10px;
+$xzoom-border-color: $primary;
+$xzoom-preview-border-color: $black;
+$xzoom-caption-fontcolor: #fff;
+
+
+//footer
+
+$footer-background: $secondary;
+$footer-color: $white;
+$footer-link-color: $warning;
+
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  -webkit-border-radius: $btn-border-radius;
+  border-radius: $btn-border-radius;
+  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
+
+/*--------------------------------------------------------------
+3.0 Alignments
+--------------------------------------------------------------*/
+.alignnone {
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.alignleft {
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+4.0 Clearings
+--------------------------------------------------------------*/
+
+.clear:before,
+.clear:after,
+.entry-content:before,
+.entry-content:after,
+.entry-footer:before,
+.entry-footer:after,
+.comment-content:before,
+.comment-content:after,
+.site-header:before,
+.site-header:after,
+.site-content:before,
+.site-content:after,
+.site-footer:before,
+.site-footer:after,
+.nav-links:before,
+.nav-links:after,
+.pagination:before,
+.pagination:after,
+.comment-author:before,
+.comment-author:after,
+.widget-area:before,
+.widget-area:after,
+.widget:before,
+.widget:after,
+.comment-meta:before,
+.comment-meta:after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+}
+
+.clear:after,
+.entry-content:after,
+.entry-footer:after,
+.comment-content:after,
+.site-header:after,
+.site-content:after,
+.site-footer:after,
+.nav-links:after,
+.pagination:after,
+.comment-author:after,
+.widget-area:after,
+.widget:after,
+.comment-meta:after {
+  clear: both;
+}
+
+/*--------------------------------------------------------------
+16.0 Media
+--------------------------------------------------------------*/
+
+img,
+video {
+  height: auto; /* Make sure images are scaled correctly. */
+  max-width: 100%; /* Adhere to container width. */
+}
+
+img.alignleft,
+img.alignright {
+  float: none;
+  margin: 20px auto;
+  display: block;
+}
+
+.page-content .wp-smiley,
+.entry-content .wp-smiley,
+.comment-content .wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+
+embed,
+iframe,
+object {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+/* Remove bottom on embeds that wrapped in paragraphs via wpautop. */
+
+p > embed:only-child,
+p > iframe:only-child,
+p > object:only-child {
+  margin-bottom: 0;
+}
+
+.wp-caption,
+.gallery-caption {
+  color: #666;
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-style: italic;
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+  margin: 0.8075em 0;
+}
+
+/* Media Elements */
+
+.mejs-container {
+  margin-bottom: 1.5em;
+}
+
+/* Audio Player */
+
+.mejs-controls a.mejs-horizontal-volume-slider,
+.mejs-controls a.mejs-horizontal-volume-slider:focus,
+.mejs-controls a.mejs-horizontal-volume-slider:hover {
+  background: transparent;
+  border: 0;
+}
+
+/* Playlist Color Overrides: Light */
+
+.site-content .wp-playlist-light {
+  border-color: #eee;
+  color: #222;
+}
+
+.site-content
+  .wp-playlist-light
+  .wp-playlist-current-item
+  .wp-playlist-item-album {
+  color: #333;
+}
+
+.site-content
+  .wp-playlist-light
+  .wp-playlist-current-item
+  .wp-playlist-item-artist {
+  color: #767676;
+}
+
+.site-content .wp-playlist-light .wp-playlist-item {
+  border-bottom: 1px dotted #eee;
+  -webkit-transition: background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.site-content .wp-playlist-light .wp-playlist-item:hover,
+.site-content .wp-playlist-light .wp-playlist-item:focus {
+  border-bottom-color: rgba(0, 0, 0, 0);
+  background-color: #767676;
+  color: #fff;
+}
+
+.site-content .wp-playlist-light a.wp-playlist-caption:hover,
+.site-content .wp-playlist-light .wp-playlist-item:hover a,
+.site-content .wp-playlist-light .wp-playlist-item:focus a {
+  color: #fff;
+}
+
+/* Playlist Color Overrides: Dark */
+
+.site-content .wp-playlist-dark {
+  background: #222;
+  border-color: #333;
+}
+
+.site-content .wp-playlist-dark .mejs-container .mejs-controls {
+  background-color: #333;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-caption {
+  color: #fff;
+}
+
+.site-content
+  .wp-playlist-dark
+  .wp-playlist-current-item
+  .wp-playlist-item-album {
+  color: #eee;
+}
+
+.site-content
+  .wp-playlist-dark
+  .wp-playlist-current-item
+  .wp-playlist-item-artist {
+  color: #aaa;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-playing {
+  background-color: #333;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-item {
+  border-bottom: 1px dotted #555;
+  -webkit-transition: background-color 0.2s ease-in-out,
+    border-color 0.2s ease-in-out, color 0.3s ease-in-out;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+.site-content .wp-playlist-dark .wp-playlist-item:hover,
+.site-content .wp-playlist-dark .wp-playlist-item:focus {
+  border-bottom-color: rgba(0, 0, 0, 0);
+  background-color: #aaa;
+  color: #222;
+}
+
+.site-content .wp-playlist-dark a.wp-playlist-caption:hover,
+.site-content .wp-playlist-dark .wp-playlist-item:hover a,
+.site-content .wp-playlist-dark .wp-playlist-item:focus a {
+  color: #222;
+}
+
+/* Playlist Style Overrides */
+
+.site-content .wp-playlist {
+  padding: 0.625em 0.625em 0.3125em;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-title {
+  font-weight: 700;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-album {
+  font-style: normal;
+}
+
+.site-content .wp-playlist-current-item .wp-playlist-item-artist {
+  font-size: 10px;
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.1818em;
+  text-transform: uppercase;
+}
+
+.site-content .wp-playlist-item {
+  padding: 0 0.3125em;
+  cursor: pointer;
+}
+
+.site-content .wp-playlist-item:last-of-type {
+  border-bottom: none;
+}
+
+.site-content .wp-playlist-item a {
+  padding: 0.3125em 0;
+  border-bottom: none;
+}
+
+.site-content .wp-playlist-item a,
+.site-content .wp-playlist-item a:focus,
+.site-content .wp-playlist-item a:hover {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.site-content .wp-playlist-item-length {
+  top: 5px;
+}
+
+/* SVG Icons base styles */
+
+.icon {
+  display: inline-block;
+  fill: currentColor;
+  height: 1em;
+  position: relative; /* Align more nicely with capital letters */
+  top: -0.0625em;
+  vertical-align: middle;
+  width: 1em;
+}
+
+/*--------------------------------------------------------------
+16.1 Galleries
+--------------------------------------------------------------*/
+
+.gallery-item {
+  display: inline-block;
+  text-align: left;
+  vertical-align: top;
+  margin: 0 0 1.5em;
+  padding: 0 1em 0 0;
+  width: 50%;
+}
+
+.gallery-columns-1 .gallery-item {
+  width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+
+.gallery-item a,
+.gallery-item a:hover,
+.gallery-item a:focus,
+.widget-area .gallery-item a,
+.widget-area .gallery-item a:hover,
+.widget-area .gallery-item a:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.gallery-item a img {
+  display: block;
+  -webkit-transition: -webkit-filter 0.2s ease-in;
+  transition: -webkit-filter 0.2s ease-in;
+  transition: filter 0.2s ease-in;
+  transition: filter 0.2s ease-in, -webkit-filter 0.2s ease-in;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.gallery-item a:hover img,
+.gallery-item a:focus img {
+  -webkit-filter: opacity(60%);
+  filter: opacity(60%);
+}
+
+.gallery-caption {
+  display: block;
+  text-align: left;
+  padding: 0 10px 0 0;
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+18.0 SVGs Fallbacks
+--------------------------------------------------------------*/
+
+.svg-fallback {
+  display: none;
+}
+
+.no-svg .svg-fallback {
+  display: inline-block;
+}
+
+.no-svg .dropdown-toggle {
+  padding: 0.5em 0 0;
+  right: 0;
+  text-align: center;
+  width: 2em;
+}
+
+.no-svg .dropdown-toggle .svg-fallback.icon-angle-down {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+  -ms-transform: rotate(180deg); /* IE 9 */
+  transform: rotate(180deg);
+}
+
+.no-svg .dropdown-toggle.toggled-on .svg-fallback.icon-angle-down {
+  -webkit-transform: rotate(0); /* Chrome, Safari, Opera */
+  -ms-transform: rotate(0); /* IE 9 */
+  transform: rotate(0);
+}
+
+.no-svg .dropdown-toggle .svg-fallback.icon-angle-down:before {
+  content: "\005E";
+}
+
+/* Social Menu fallbacks */
+
+.no-svg .social-navigation a {
+  background: transparent;
+  color: #222;
+  height: auto;
+  width: auto;
+}
+
+/* Show screen reader text in some cases */
+
+.no-svg .next.page-numbers .screen-reader-text,
+.no-svg .prev.page-numbers .screen-reader-text,
+.no-svg .social-navigation li a .screen-reader-text,
+.no-svg .search-submit .screen-reader-text {
+  clip: auto;
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  height: auto;
+  position: relative !important; /* overrides previous !important styles */
+  width: auto;
+}
+
+/*--------------------------------------------------------------
+19.0 Media Queries
+--------------------------------------------------------------*/
+
+/* Adjust positioning of edit shortcuts, override style in customize-preview.css */
+@media screen and (min-width: 20em) {
+  body.customize-partial-edit-shortcuts-shown .site-header .site-title {
+    padding-left: 0;
+  }
+}
+
+@media screen and (min-width: 30em) {
+  .entry-content blockquote.alignleft,
+  .entry-content blockquote.alignright {
+    font-size: 14px;
+    font-size: 0.875rem;
+  }
+
+  /* Fix image alignment */
+  img.alignleft {
+    float: left;
+    margin-right: 1.5em;
+  }
+
+  img.alignright {
+    float: right;
+    margin-left: 1.5em;
+  }
+
+  /* Site Footer */
+
+  .site-footer {
+    font-size: 16px;
+    font-size: 1rem;
+  }
+
+  /* Gallery Columns */
+
+  .gallery-item {
+    max-width: 25%;
+  }
+
+  .gallery-columns-1 .gallery-item {
+    max-width: 100%;
+  }
+
+  .gallery-columns-2 .gallery-item {
+    max-width: 50%;
+  }
+
+  .gallery-columns-3 .gallery-item {
+    max-width: 33.33%;
+  }
+
+  .gallery-columns-4 .gallery-item {
+    max-width: 25%;
+  }
+}
+
+@media screen and (max-width: 30em) {
+  .wp-caption {
+    &.alignright,
+    &.alignleft {
+      float: none;
+      margin: 15px auto;
+    }
+  }
+}
