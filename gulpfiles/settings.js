@@ -19,6 +19,7 @@ exports.sass = {
     common: {
         mini: true,
         import: [
+            "node_modules/normalize.css/normalize.css",
             importPath + "scss/common/common.scss",
         ],
         export: [
