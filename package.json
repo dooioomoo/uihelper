@@ -4,5 +4,30 @@
     "bootstrap": "^5.1.1",
     "jquery": "^3.6.0",
     "jqueryui": "^1.11.1"
-  }
+  },
+  "name": "uihelper",
+  "description": "+ ### npm i -g yarn && yarn",
+  "version": "1.0.0",
+  "main": "gulpfile.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp",
+    "sync": "gulp watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dooioomoo/uihelper.git"
+  },
+  "keywords": [
+    "ui",
+    "gulp",
+    "build"
+  ],
+  "author": "ryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dooioomoo/uihelper/issues"
+  },
+  "homepage": "https://github.com/dooioomoo/uihelper#readme"
 }
