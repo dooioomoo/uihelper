@@ -3,7 +3,8 @@
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.1.1",
     "jquery": "^3.6.0",
-    "jqueryui": "^1.11.1"
+    "jqueryui": "^1.11.1",
+    "normalize.css": "^8.0.1"
   },
   "name": "uihelper",
   "description": "+ ### npm i -g yarn && yarn",
