@@ -96,6 +96,7 @@ exports.images = {
 exports.fonts = {
     app: [
         ["node_modules/@fortawesome/fontawesome-free/webfonts/**/*", exportPath + "assets/fonts/fontawesome"],
+        ["node_modules/@fontsource/roboto/files/**/*", exportPath + "assets/fonts/roboto"],
         [importPath + "fonts/**/*", exportPath + "assets/fonts"]
     ],
 }
