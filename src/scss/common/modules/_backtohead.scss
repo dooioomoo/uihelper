@@ -1,17 +1,18 @@
 .few-backtohead {
-  width: 60px;
-  height: 60px;
+  width: 30px;
+  height: 30px;
   background: rgba($color: black, $alpha: 0.75);
   position: fixed;
-  right: 2rem;
-  bottom: 2rem;
+  left: 1rem;
+  bottom: 1rem;
   border-radius: $border-radius;
   align-items: center;
   justify-content: center;
+
   &::before {
     content: "";
-    width: calc(100%-61.8%);
-    height: calc(100%-61.8%);
+    width: calc(100% - 61.8%);
+    height: calc(100% - 61.8%);
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMjAgNTEyIj48cGF0aCBzdHlsZT0iZmlsbDp3aGl0ZTsiIGQ9Ik0xNzcgMTU5LjdsMTM2IDEzNmM5LjQgOS40IDkuNCAyNC42IDAgMzMuOWwtMjIuNiAyMi42Yy05LjQgOS40LTI0LjYgOS40LTMzLjkgMEwxNjAgMjU1LjlsLTk2LjQgOTYuNGMtOS40IDkuNC0yNC42IDkuNC0zMy45IDBMNyAzMjkuN2MtOS40LTkuNC05LjQtMjQuNiAwLTMzLjlsMTM2LTEzNmM5LjQtOS41IDI0LjYtOS41IDM0LS4xeiIvPjwvc3ZnPg==");
     background-repeat: no-repeat;
     background-position: center center;
