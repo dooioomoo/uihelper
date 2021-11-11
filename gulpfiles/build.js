@@ -1,5 +1,6 @@
 const gulp = require("gulp");
-const sass = require("gulp-sass");
+// const sass = require("gulp-sass");
+const sass = require('gulp-sass')(require('sass'));
 const gulpif = require("gulp-if");
 const concat = require("gulp-concat");
 const autoprefixer = require("autoprefixer");
